@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://ipad.tvcatchup.com/css/style.css" />
+		<link rel="stylesheet" href="http://ipad.tvcatchup.com/css/channels.css" />
+		<link rel="stylesheet" href="http://ipad.tvcatchup.com/css/device_ipad.css" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+		<script>
+			
+			
+			
+			//var url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%20%3D%20%22ipad.tvcatchup.com%22%20and%20xpath%20%3D%20%22%2Fhtml%2Fbody%2Fdiv%5B%40id%3D'tvcatchup'%5D%2Fdiv%5B%40id%3D'padding'%5D%2Fdiv%5B%40id%3D'channels'%5D%2Fdiv%5B%40class%3D'box'%5D%2Ful%5B%40class%3D'logos%20clear'%5D%2Fli%22&format=json&diagnostics=true&callback=cbfunc";
+			var url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%20%3D%20%22ipad.tvcatchup.com%22%20and%20xpath%20%3D%20%22%2Fhtml%2Fbody%2Fdiv%5B%40id%3D'tvcatchup'%5D%2Fdiv%5B%40id%3D'padding'%5D%2Fdiv%5B%40id%3D'channels'%5D%2Fdiv%5B%40class%3D'box'%5D%2Ful%5B%40class%3D'logos%20clear'%5D%2Fli%22",
+				$list;
+			
+			
+			function refresh () {
+				$.get (url, function (data) {
+					handleData (data);
+				}, 'xml');
+			}
+			
+
+			function handleClick (e) {
+				e.preventDefault ();
+				console.log ($(e.target).attr ('href'));
+			}
+			
+			
+			function handleData (data) {
+				var html = $('<div>').append ($(data).find ('li'))[0].innerHTML;
+				$list.empty ().html (html).find ('a').click (handleClick);				
+			}
+
+
+			$(function () {
+				$list = $('ul');
+				refresh ();
+			});
+
+			
+		</script>
+	</head>
+	
+	<body>
+		<div id="channels">
+			<ul class="logos"></ul>
+		</div>
+	</body>
+	
+</html>	
+			
+			
