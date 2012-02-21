@@ -1,0 +1,28 @@
+
+body {
+	background-color: #1E262A;
+}
+
+
+.button {
+	border: none;
+	background-color: #334f54;
+	color: #EFEFEF;	
+	width: 90%;
+	padding: 12px 0;
+	margin: 20px 5%;
+	display: block;
+	text-align: center;
+	font-family: Arial;
+	font-size: 14px;
+	text-decoration: none;
+	vertical-align: middle;
+	border-radius: 12px;
+	cursor: pointer;
+}
+
+
+p.current {
+	margin: 20px 0 0 0;
+	text-align: center;
+}

@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./main.css" />
+		<script src="/socket.io/socket.io.js"></script>
+		
+		<script>
+			(function () {
+
+				var socket = this._socket = io.connect (),
+					tv,
+					url = '';
+	
+
+				socket.on ('channel', function (newUrl) {
+					url = 'http://ipad.tvcatchup.com' + newUrl;
+					if (tv) tv.location.href = url;
+				});
+
+
+				function openTV () {
+					tv = window.open (url, 'tv');
+				}
+				
+				
+				window.addEventListener ('load', function () {
+					document.getElementById ('tv').addEventListener ('click', openTV, true);
+				});
+
+			})();
+		</script>
+	</head>
+	
+	<body>
+		<button id="tv" class="button">Make me a TV</button>
+		<a class="button" href="./remote.html">Make me a remote control</a>
+	</body>	
+</html>	
+			
+			
