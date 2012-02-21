@@ -1,0 +1,12 @@
+{
+  "name": "node-tv-remote",
+  "description": "Turn your tablet and mobile phone into a TV and remote control.",
+  "version": "0.0.1",
+  "author": "Paul Cuthbertson <github@paulcuth.me.uk>",
+  "dependencies": {
+    "express": "2.5.8",
+    "socket.io": "0.8.7"
+  },
+  "keywords": ["tv", "remote", "TVCatchup"],
+  "repository": "git://github.com/paulcuth/node-tv-remote"
+}
