@@ -32,7 +32,7 @@ Run the server:
 $> node server
 ```
 
-Navigate to your server on the port shown for both devices. The first time you select a channel, you will be asked to sign in to TVCatchup. Once logged in, return to your local server and try again.
+Now you need to sign in to your TVCatchup account on BOTH devices. Once that's done, navigate to your server on the port shown for both devices, choose "Make me a TV" on one and "Make me a remote control" on the other.
 
 
 ##Acknowedgements
